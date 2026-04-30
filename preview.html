@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Derma‑T | Queen's Dermatology Club · Student resource centre</title>
+  <!-- Font Awesome 6 (free) for icons + interactive buttons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Aesthetic teal/white Derma-T fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ==== STYLE.CSS — modernised with DermNet inspired layout, interactive cards & buttons ==== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', system-ui, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background: #ffffff;
+      color: #1a2b3f;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* === topbar / header — DermNet dark blue authority === */
+    .topbar {
+      background: #002b4a;
+      color: white;
+      padding: 12px 0;
+      border-bottom: 4px solid #4b9cd3;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo i {
+      font-size: 2.2rem;
+      color: #9fd0f0;
+    }
+
+    .logo span {
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: #f0f7ff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+    }
+
+    .nav a:hover {
+      border-bottom-color: #7fc2f0;
+      color: white;
+    }
+
+    .btn-nav {
+      background: #1e6a9f;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-weight: 600;
+      border: 1px solid #8fc9ff;
+    }
+
+    .btn-nav:hover {
+      background: #2b7ec0;
+    }
+
+    /* === hero / pro student banner – like dermnet student centre === */
+    .hero-student {
+      background: linear-gradient(105deg, #e4f0fa 0%, #cde4f5 100%);
+      padding: 48px 0;
+      border-bottom: 1px solid #bdd8ec;
+    }
+
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-badge {
+      background: #002b4a;
+      color: white;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 20px;
+      letter-spacing: 0.3px;
+    }
+
+    .hero-text h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #002b4a;
+      margin-bottom: 16px;
+    }
+
+    .hero-text .student-tagline {
+      font-size: 1.4rem;
+      color: #1f5379;
+      margin-bottom: 24px;
+      border-left: 5px solid #4b9cd3;
+      padding-left: 24px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      padding: 12px 30px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #002b4a;
+      border: 1px solid #b0cde0;
+      transition: all 0.2s;
+      box-shadow: 0 2px 8px rgba(0,43,74,0.08);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #002b4a;
+      color: white;
+      border: none;
+      box-shadow: 0 8px 18px rgba(0,43,74,0.2);
+    }
+
+    .btn-primary i {
+      color: #9fd0f0;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: #f0f7ff;
+      border-color: #1e6a9f;
+    }
+
+    .btn-primary:hover {
+      background: #0e3e62;
+    }
+
+    .hero-image {
+      flex: 0 0 140px;
+      text-align: center;
+    }
+
+    .hero-image i {
+      font-size: 9rem;
+      color: #1f5379;
+      opacity: 0.7;
+    }
+
+    /* editorial process row – like dermnet values */
+    .editorial-row {
+      background: #f2f8ff;
+      padding: 26px 0;
+      border-bottom: 2px solid #bdd8ec;
+    }
+
+    .values-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      font-weight: 500;
+    }
+
+    .value-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      padding: 8px 22px;
+      border-radius: 40px;
+      box-shadow: 0 2px 10px rgba(0,43,74,0.05);
+    }
+
+    .value-item i {
+      color: #1e6a9f;
+      font-size: 1.3rem;
+    }
+
+    /* section styling */
+    .section {
+      padding: 56px 0;
+    }
+
+    .section-light {
+      background: #ffffff;
+    }
+
+    .section-muted {
+      background: #f8fafd;
+    }
+
+    .section h3 {
+      font-size: 2.2rem;
+      font-weight: 650;
+      color: #002b4a;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section h3 i {
+      color: #4b9cd3;
+      font-size: 2rem;
+    }
+
+    .section-subhead {
+      font-size: 1.2rem;
+      color: #2c577b;
+      margin-bottom: 36px;
+      max-width: 800px;
+    }
+
+    /* condition cards – interactive grid */
+    .conditions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .condition-btn {
+      background: white;
+      border: 2px solid #dbeaf3;
+      border-radius: 40px;
+      padding: 16px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      color: #002b4a;
+      transition: 0.2s;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    .condition-btn i {
+      font-size: 2.2rem;
+      color: #1e6a9f;
+    }
+
+    .condition-btn:hover {
+      background: #002b4a;
+      color: white;
+      border-color: #002b4a;
+      transform: scale(1.02);
+    }
+
+    .condition-btn:hover i {
+      color: white;
+    }
+
+    .condition-btn.active {
+      background: #002b4a;
+      color: white;
+      border-color: #002b4a;
+    }
+    .condition-btn.active i {
+      color: #9fd0f0;
+    }
+
+    /* dynamic definition card */
+    .definition-card {
+      background: #eaf3fb;
+      border-left: 10px solid #1e6a9f;
+      padding: 32px 36px;
+      border-radius: 40px;
+      margin: 24px 0 32px;
+      box-shadow: 0 12px 24px -8px rgba(0,43,74,0.15);
+    }
+
+    .definition-card h4 {
+      font-size: 2rem;
+      color: #002b4a;
+      margin-bottom: 16px;
+    }
+
+    .definition-card p {
+      font-size: 1.2rem;
+      color: #11324d;
+    }
+
+    /* cards grid (programs/team) */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 28px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 26px 20px;
+      box-shadow: 0 12px 28px -8px rgba(0,43,74,0.1);
+      border: 1px solid #e2edf6;
+      transition: 0.15s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card i {
+      font-size: 2.2rem;
+      color: #1e6a9f;
+      margin-bottom: 18px;
+    }
+
+    .card h4 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      color: #002b4a;
+    }
+
+    .exec-badge {
+      display: inline-block;
+      background: #cbe0f2;
+      border-radius: 40px;
+      padding: 6px 18px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 16px;
+      color: #002b4a;
+    }
+
+    /* calendar / events list */
+    .event-list {
+      background: white;
+      border-radius: 32px;
+      padding: 24px;
+    }
+
+    .event-item {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 18px 0;
+      border-bottom: 1px dashed #b0cde0;
+    }
+
+    .event-date {
+      background: #002b4a;
+      color: white;
+      min-width: 90px;
+      text-align: center;
+      padding: 10px 8px;
+      border-radius: 30px;
+      font-weight: 700;
+    }
+
+    .event-desc {
+      font-weight: 500;
+      flex: 1;
+    }
+
+    .btn-small {
+      background: none;
+      border: 2px solid #002b4a;
+      border-radius: 40px;
+      padding: 8px 20px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn-small:hover {
+      background: #002b4a;
+      color: white;
+    }
+
+    /* footer */
+    .footer {
+      background: #002b4a;
+      color: white;
+      padding: 40px 0 24px;
+    }
+
+    .footer .social-links a {
+      color: white;
+      font-size: 1.8rem;
+      margin: 0 16px;
+      transition: 0.2s;
+    }
+
+    .footer .social-links a:hover {
+      color: #9fd0f0;
+    }
+
+    @media (max-width: 700px) {
+      .hero-grid { flex-direction: column; text-align: center; }
+      .hero-text .student-tagline { border-left: none; padding-left: 0; }
+    }
+
+    /* ==== DERMA-T POSTER THEME OVERRIDE: ONLY COLOUR + FONT CHANGES ==== */
+    :root {
+      --dt-teal-dark: #005f60;
+      --dt-teal: #008b8b;
+      --dt-teal-soft: #bfe4e1;
+      --dt-teal-pale: #eaf8f7;
+      --dt-white: #ffffff;
+      --dt-text: #064447;
+      --dt-muted: #3f7475;
+      --dt-border: #c9e7e5;
+      --dt-shadow: rgba(0, 139, 139, 0.16);
+    }
+
+    body {
+      font-family: 'Poppins', system-ui, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background: var(--dt-white);
+      color: var(--dt-text);
+    }
+
+    .logo span,
+    .hero-text h2,
+    .section h3,
+    .definition-card h4,
+    .card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--dt-teal-dark);
+    }
+
+    .topbar,
+    .footer,
+    .hero-badge,
+    .btn-primary,
+    .condition-btn:hover,
+    .condition-btn.active,
+    .event-date {
+      background: var(--dt-teal);
+      color: var(--dt-white);
+    }
+
+    .topbar {
+      border-bottom-color: var(--dt-teal-soft);
+    }
+
+    .logo i,
+    .nav a,
+    .footer .social-links a,
+    .condition-btn:hover i,
+    .condition-btn.active i,
+    .btn-primary i {
+      color: var(--dt-white);
+    }
+
+    .nav a:hover {
+      color: var(--dt-teal-pale);
+      border-bottom-color: var(--dt-white);
+    }
+
+    .btn-nav {
+      background: var(--dt-white);
+      color: var(--dt-teal) !important;
+      border-color: var(--dt-white);
+    }
+
+    .btn-nav:hover,
+    .btn:hover {
+      background: var(--dt-teal-pale);
+      border-color: var(--dt-teal);
+    }
+
+    .hero-student {
+      background: linear-gradient(105deg, var(--dt-white) 0%, var(--dt-teal-pale) 100%);
+      border-bottom-color: var(--dt-border);
+    }
+
+    .hero-text .student-tagline,
+    .section-subhead,
+    .event-desc {
+      color: var(--dt-muted);
+    }
+
+    .hero-text .student-tagline {
+      border-left-color: var(--dt-teal);
+    }
+
+    .btn,
+    .condition-btn,
+    .btn-small {
+      color: var(--dt-teal-dark);
+      border-color: var(--dt-border);
+    }
+
+    .btn,
+    .card,
+    .value-item {
+      box-shadow: 0 8px 22px var(--dt-shadow);
+    }
+
+    .btn-primary:hover,
+    .btn-small:hover {
+      background: var(--dt-teal-dark);
+      color: var(--dt-white);
+    }
+
+    .hero-image i,
+    .value-item i,
+    .section h3 i,
+    .condition-btn i,
+    .card i,
+    #contact i {
+      color: var(--dt-teal) !important;
+    }
+
+    .editorial-row,
+    .section-muted,
+    #contact {
+      background: var(--dt-teal-pale) !important;
+      border-bottom-color: var(--dt-border);
+    }
+
+    .section-light,
+    .value-item,
+    .condition-btn,
+    .definition-card,
+    .card,
+    .event-list {
+      background: var(--dt-white);
+      color: var(--dt-text);
+    }
+
+    .condition-btn,
+    .card {
+      border-color: var(--dt-border);
+    }
+
+    .definition-card {
+      background: var(--dt-white);
+      border-left-color: var(--dt-teal);
+      box-shadow: 0 12px 24px -8px var(--dt-shadow);
+    }
+
+    .definition-card p,
+    .card h4,
+    .card p,
+    .event-desc,
+    #contact,
+    #contact strong,
+    #contact p {
+      color: var(--dt-text);
+    }
+
+    .exec-badge {
+      background: var(--dt-teal-soft);
+      color: var(--dt-teal-dark);
+    }
+
+    .event-item {
+      border-bottom-color: var(--dt-border);
+    }
+
+    .btn-small {
+      border-color: var(--dt-teal);
+      color: var(--dt-teal-dark);
+    }
+
+    .footer .social-links a:hover {
+      color: var(--dt-teal-pale);
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- HEADER with DermNet authority style -->
+<header class="topbar">
+  <div class="container topbar-inner">
+    <div class="logo">
+      <i class="fas fa-hand-holding-heart"></i>
+      <span>Derma‑T</span>
+    </div>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#conditions">Conditions</a>
+      <a href="#programs">Programs</a>
+      <a href="#calendar">Calendar</a>
+      <a href="#team">Team</a>
+      <a class="btn-nav" href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO section – Student Resource Center (inspired by dermnet) -->
+<section class="hero-student">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <span class="hero-badge"><i class="fas fa-graduation-cap"></i> STUDENT‑LED INITIATIVE</span>
+      <h2>Dermatology resource centre</h2>
+      <div class="student-tagline">
+        <i class="fas fa-stethoscope"></i> For students · by students · evidence‑based skin health
+      </div>
+      <div class="hero-buttons">
+        <a href="#conditions" class="btn btn-primary"><i class="fas fa-search"></i> Explore conditions</a>
+        <a href="#calendar" class="btn"><i class="fas fa-calendar-alt"></i> Upcoming events</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <i class="fas fa-clinic-medical"></i>
+    </div>
+  </div>
+</section>
+
+<!-- editorial values row (DermNet "Our editorial process" style) -->
+<section class="editorial-row">
+  <div class="container">
+    <div class="values-grid">
+      <span class="value-item"><i class="fas fa-check-circle"></i> Accessible</span>
+      <span class="value-item"><i class="fas fa-lock-open"></i> Independent</span>
+      <span class="value-item"><i class="fas fa-file-invoice"></i> Free</span>
+      <span class="value-item"><i class="fas fa-star"></i> Authoritative</span>
+      <span class="value-item"><i class="fas fa-stethoscope"></i> Reviewed by dermatologists</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT section (purpose from Derma-T doc) -->
+<section id="about" class="section section-light">
+  <div class="container">
+    <h3><i class="fas fa-pagelines"></i> Our purpose</h3>
+    <p class="section-subhead">Derma‑T is a student‑led nonprofit advancing skin health education, hygiene, and dermatology awareness — on campus and beyond Kingston.</p>
+    <div class="cards-grid" style="grid-template-columns: repeat(3,1fr);">
+      <div class="card"><i class="fas fa-chalkboard-teacher"></i><h4>Education</h4><p>Evidence‑based workshops & guest speakers (dermatologists, med students).</p></div>
+      <div class="card"><i class="fas fa-hands-helping"></i><h4>Outreach</h4><p>Hygiene kits, skin health campaigns, community partnerships.</p></div>
+      <div class="card"><i class="fas fa-bullhorn"></i><h4>Awareness</h4><p>Debunk myths, promote sun protection & inclusive skin health.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE SKIN CONDITIONS EXPLORER – dynamic buttons with definitions (inspired by DermNet topics) -->
+<section id="conditions" class="section section-muted">
+  <div class="container">
+    <h3><i class="fas fa-disease"></i> Skin conditions explorer</h3>
+    <p class="section-subhead">Click any button to view a short, evidence‑based explanation (educational use only).</p>
+
+    <!-- condition buttons -->
+    <div class="conditions-grid" id="conditionButtons">
+      <button class="condition-btn" data-condition="acne"><i class="fas fa-circle"></i> Acne</button>
+      <button class="condition-btn" data-condition="rashes"><i class="fas fa-wind"></i> Rashes</button>
+      <button class="condition-btn" data-condition="eczema"><i class="fas fa-allergies"></i> Eczema</button>
+      <button class="condition-btn" data-condition="psoriasis"><i class="fas fa-dna"></i> Psoriasis</button>
+      <button class="condition-btn" data-condition="rosacea"><i class="fas fa-face-frown"></i> Rosacea</button>
+      <button class="condition-btn" data-condition="fungal"><i class="fas fa-seedling"></i> Fungal</button>
+      <button class="condition-btn" data-condition="hives"><i class="fas fa-bolt"></i> Hives</button>
+    </div>
+
+    <!-- dynamic definition card -->
+    <div class="definition-card" id="definitionDisplay">
+      <h4 id="defTitle">Acne</h4>
+      <p id="defText">Acne is a common skin condition caused by clogged pores, excess oil, bacteria, and inflammation. It often appears on the face, chest, and back.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS & ACTIVITIES (from Derma-T list) -->
+<section id="programs" class="section section-light">
+  <div class="container">
+    <h3><i class="fas fa-laptop-house"></i> Programs & activities</h3>
+    <div class="cards-grid">
+      <div class="card"><i class="fas fa-microphone-alt"></i><h4>Guest speaker series</h4><p>Dermatologists & healthcare pros discuss patient care & wellness.</p></div>
+      <div class="card"><i class="fas fa-hands-bubbles"></i><h4>Hygiene kit assembly</h4><p>Community outreach: distribute kits & educational material.</p></div>
+      <div class="card"><i class="fas fa-calendar-week"></i><h4>Weekly myth‑busting</h4><p>Social media posts on common skin myths vs. facts.</p></div>
+      <div class="card"><i class="fas fa-hand-holding-usd"></i><h4>Fundraising campaigns</h4><p>Support local skin health initiatives.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDAR / GOALS (January event + interactive) -->
+<section id="calendar" class="section section-muted">
+  <div class="container">
+    <h3><i class="fas fa-calendar-check"></i> January goals & events</h3>
+    <div class="event-list">
+      <div class="event-item">
+        <div class="event-date">JAN 25</div>
+        <div class="event-desc"><strong>Get‑to‑know‑you Exec night</strong> – Karaoke, snacks, and role overview (room TBA).</div>
+        <button class="btn-small" onclick="alert('📅 Reminder set (demo)')"><i class="far fa-bell"></i> remind me</button>
+      </div>
+      <div class="event-item">
+        <div class="event-date">JAN 15-20</div>
+        <div class="event-desc"><strong>Cold email sponsors / build team</strong> – outreach to dermatology clinics.</div>
+        <button class="btn-small" onclick="alert('📋 template request (interactive)')"><i class="fas fa-envelope-open-text"></i> get template</button>
+      </div>
+      <div class="event-item">
+        <div class="event-date">WEEKLY</div>
+        <div class="event-desc"><strong>Instagram posts</strong> – #projectdermat: acne, eczema, sun protection.</div>
+        <button class="btn-small" onclick="window.open('https://instagram.com/projectdermat','_blank')"><i class="fab fa-instagram"></i> follow</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM section - Updated Executive Team (no interview section) -->
+<section id="team" class="section section-light">
+  <div class="container">
+    <h3><i class="fas fa-users"></i> Executive team</h3>
+    <div class="cards-grid">
+      <div class="card"><i class="fas fa-crown"></i><h4>Co‑founders</h4><p>Sarah · Rojan</p><span class="exec-badge">vision & leadership</span></div>
+      <div class="card"><i class="fas fa-handshake"></i><h4>Outreach Coordinators</h4><p>Ashley · Hasti</p><span class="exec-badge">community & partnerships</span></div>
+      <div class="card"><i class="fas fa-calendar-alt"></i><h4>Event Coordinators</h4><p>Rayyan · Kiana</p><span class="exec-badge">workshops + logistics</span></div>
+      <div class="card"><i class="fas fa-pen-fancy"></i><h4>Content Managers</h4><p>Prisha · Benjamin</p><span class="exec-badge">resources & social content</span></div>
+      <div class="card"><i class="fas fa-calculator"></i><h4>Finance Manager</h4><p>Chloe</p><span class="exec-badge">budget & funding</span></div>
+      <div class="card"><i class="fas fa-globe"></i><h4>Web Managers</h4><p>Ennoj · Kyan</p><span class="exec-badge">platform & accessibility</span></div>
+      <div class="card"><i class="fas fa-heart"></i><h4>Head of D&I</h4><p>Salma</p><span class="exec-badge">inclusive skin health</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT & SOCIAL (bottom) -->
+<section id="contact" class="section" style="background: #e2effa;">
+  <div class="container">
+    <h3><i class="fas fa-address-card"></i> Connect with us</h3>
+    <div style="display: flex; gap: 40px; flex-wrap: wrap; align-items: center;">
+      <div><i class="fas fa-envelope fa-2x" style="color:#002b4a;"></i> <strong>projectdermat@gmail.com</strong></div>
+      <div><i class="fab fa-instagram fa-2x" style="color:#002b4a;"></i> <strong>@projectdermat</strong></div>
+      <div><i class="fab fa-linkedin fa-2x" style="color:#002b4a;"></i> <strong>/company/derma-t</strong></div>
+    </div>
+    <p style="margin-top: 28px;">📍 Queen's University, Kingston · 2026 launch</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container" style="text-align: center;">
+    <div class="social-links">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+    <p style="margin-top: 24px; opacity: 0.8;">© 2026 Derma‑T · Student‑led dermatology initiative. Content for educational use.</p>
+  </div>
+</footer>
+
+<!-- JavaScript for interactive condition explorer (definition changes) -->
+<script>
+  (function() {
+    const defTitle = document.getElementById('defTitle');
+    const defText = document.getElementById('defText');
+    const buttons = document.querySelectorAll('.condition-btn');
+
+    const conditionData = {
+      acne: { title: 'Acne', text: 'Acne is a common skin condition caused by clogged pores, excess oil, bacteria, and inflammation. It often appears on the face, chest, and back.' },
+      rashes: { title: 'Rashes', text: 'Rashes are changes in skin color or texture caused by irritation, infection, allergies, or underlying conditions.' },
+      eczema: { title: 'Eczema (dermatitis)', text: 'Eczema is a chronic inflammatory condition that causes dry, itchy, and irritated skin. It often flares due to triggers like stress or allergens.' },
+      psoriasis: { title: 'Psoriasis', text: 'Psoriasis is an autoimmune condition that leads to rapid skin cell buildup, resulting in thick, scaly patches.' },
+      rosacea: { title: 'Rosacea', text: 'Rosacea causes facial redness, flushing, and sometimes bumps, often triggered by heat, stress, or certain foods.' },
+      fungal: { title: 'Fungal infections', text: 'Fungal infections occur when fungi grow on the skin, commonly affecting warm, moist areas such as feet or groin.' },
+      hives: { title: 'Hives', text: 'Hives are raised, itchy welts caused by allergic reactions, stress, or infections. They often appear suddenly and fade within hours.' }
+    };
+
+    function setActive(cond) {
+      buttons.forEach(btn => {
+        if (btn.dataset.condition === cond) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        const cond = this.dataset.condition;
+        if (cond && conditionData[cond]) {
+          defTitle.innerText = conditionData[cond].title;
+          defText.innerText = conditionData[cond].text;
+          setActive(cond);
+        }
+      });
+    });
+
+    // set default active on load
+    setActive('acne');
+  })();
+</script>
+
+<!-- small extra interactive for event demo -->
+<script>
+  function showTemplate() {
+    alert('📎 Cold email template: "Dear Dr. [name], we are a student dermatology club..." ');
+  }
+</script>
+
+</body>
+</html>
