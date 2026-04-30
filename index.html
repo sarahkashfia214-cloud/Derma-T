@@ -1,10 +1,286 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Website</title>
+  <title>Derma-T</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f7fbfb;
+      color: #174646;
+    }
+
+    .navbar {
+      background: white;
+      padding: 22px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      color: #008b8b;
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #174646;
+      font-weight: 600;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 60px;
+      background: linear-gradient(135deg, #ffffff 0%, #e3f5f4 100%);
+      min-height: 520px;
+    }
+
+    .hero-text {
+      max-width: 560px;
+    }
+
+    .small-title {
+      font-size: 15px;
+      letter-spacing: 2px;
+      color: #008b8b;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 68px;
+      line-height: 1;
+      color: #008b8b;
+      margin: 0;
+    }
+
+    .script {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      color: #174646;
+      margin-bottom: -5px;
+    }
+
+    .subtitle {
+      font-size: 24px;
+      font-weight: 700;
+      color: #008b8b;
+      margin-top: 15px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-top: 20px;
+      color: #2d5d5d;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 25px;
+      background: #008b8b;
+      color: white;
+      padding: 16px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(0,139,139,0.25);
+    }
+
+    .circle-design {
+      width: 360px;
+      height: 360px;
+      border: 16px solid #008b8b;
+      border-radius: 50%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+      position: relative;
+    }
+
+    .circle-design h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 58px;
+      color: #75aaa6;
+    }
+
+    .section {
+      padding: 70px 40px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      color: #008b8b;
+      margin-bottom: 15px;
+    }
+
+    .section p {
+      max-width: 760px;
+      margin: auto;
+      line-height: 1.8;
+      color: #2d5d5d;
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: white;
+      width: 260px;
+      padding: 30px;
+      border-radius: 24px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      border-top: 6px solid #008b8b;
+    }
+
+    .card h3 {
+      color: #008b8b;
+      margin-bottom: 10px;
+    }
+
+    .contact {
+      background: #008b8b;
+      color: white;
+      text-align: center;
+      padding: 55px 20px;
+    }
+
+    .contact h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .contact p {
+      font-size: 18px;
+    }
+
+    .footer {
+      background: #174646;
+      color: white;
+      text-align: center;
+      padding: 18px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 50px;
+      }
+
+      .circle-design {
+        margin-top: 40px;
+        width: 270px;
+        height: 270px;
+      }
+
+      .circle-design h2 {
+        font-size: 42px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Welcome to My Website</h1>
-  <p>This is my first website using GitHub Pages.</p>
+
+  <div class="navbar">
+    <div class="logo">Derma-T</div>
+    <div class="nav-links">
+      <a href="#mission">Mission</a>
+      <a href="#work">What We Do</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-text">
+      <div class="small-title">LED BY QUEEN'S UNIVERSITY STUDENTS</div>
+      <div class="script">Project</div>
+      <h1>DERMA-T</h1>
+      <div class="subtitle">STUDENT-LED NON-PROFIT</div>
+
+      <p>
+        Derma-T is a student-led nonprofit project dedicated to promoting education
+        around skin health, hygiene, and awareness. Our goal is to provide students
+        with insight into dermatology, connect with healthcare professionals, and
+        positively impact the community.
+      </p>
+
+      <a class="button" href="#contact">APPLICATIONS COMING SOON!</a>
+    </div>
+
+    <div class="circle-design">
+      <h2>Derma-T</h2>
+    </div>
+  </div>
+
+  <div class="section" id="mission">
+    <h2>Our Mission</h2>
+    <p>
+      We aim to make dermatology education more accessible by raising awareness about
+      skin health, hygiene, and common dermatological conditions through student-led
+      learning, outreach, and community initiatives.
+    </p>
+  </div>
+
+  <div class="section" id="work">
+    <h2>What We Do</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Skin Education</h3>
+        <p>We share easy-to-understand information about skin health and hygiene.</p>
+      </div>
+
+      <div class="card">
+        <h3>Community Outreach</h3>
+        <p>We create awareness campaigns and service initiatives for the community.</p>
+      </div>
+
+      <div class="card">
+        <h3>Healthcare Connection</h3>
+        <p>We help students learn from healthcare professionals in dermatology.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact" id="contact">
+    <h2>Applications Coming Soon!</h2>
+    <p>Contact us: Projectdermat@gmail.com</p>
+  </div>
+
+  <div class="footer">
+    © 2026 Derma-T | Student-Led Non-Profit
+  </div>
+
 </body>
 </html>
