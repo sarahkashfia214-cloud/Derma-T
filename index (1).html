@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Derma‑T | Queen's Dermatology Club · Student resource centre</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Quicksand for body text, Dancing Script for the cursive Derma-T name -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <style>
+    /* === DERMA-T — Teal & White theme === */
+    :root {
+      --teal-dark:   #2a7a72;   /* deep teal — replaces navy #002b4a   */
+      --teal-mid:    #3a9e94;   /* mid teal  — replaces #1e6a9f        */
+      --teal-bright: #4fc3b8;   /* bright accent — replaces #4b9cd3    */
+      --teal-light:  #a8ddd9;   /* pale accent   — replaces #9fd0f0    */
+      --bg-tint:     #f0faf9;   /* very pale teal tint                 */
+      --bg-soft:     #e4f5f3;   /* soft teal section background        */
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Quicksand', system-ui, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background: #ffffff;
+      color: #1a3330;
+      line-height: 1.5;
+    }
+
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+
+    /* === TOPBAR === */
+    .topbar {
+      background: var(--teal-dark);
+      color: white;
+      padding: 12px 0;
+      border-bottom: 4px solid var(--teal-bright);
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    /* The actual PNG logo image */
+    .logo-img {
+      height: 52px;
+      width: auto;
+      /* logo has a white background — blend it into the teal header */
+      mix-blend-mode: multiply;
+      filter: brightness(0) invert(1);   /* makes it fully white so it reads on teal */
+      opacity: 0.92;
+    }
+
+    /* Cursive brand name */
+    .logo-name {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 0.5px;
+    }
+
+    .nav { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+
+    .nav a {
+      color: #e0f6f4;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.2s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+    }
+
+    .nav a:hover { border-bottom-color: var(--teal-light); color: white; }
+
+    .btn-nav {
+      background: var(--teal-mid);
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-weight: 600;
+      border: 1px solid var(--teal-light);
+    }
+
+    .btn-nav:hover { background: var(--teal-bright); }
+
+    /* === HERO === */
+    .hero-student {
+      background: linear-gradient(105deg, var(--bg-tint) 0%, var(--bg-soft) 100%);
+      padding: 48px 0;
+      border-bottom: 1px solid var(--teal-light);
+    }
+
+    .hero-grid { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+
+    .hero-badge {
+      background: var(--teal-dark);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 20px;
+      letter-spacing: 0.3px;
+    }
+
+    .hero-text h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--teal-dark);
+      margin-bottom: 16px;
+    }
+
+    .hero-text .student-tagline {
+      font-size: 1.4rem;
+      color: var(--teal-mid);
+      margin-bottom: 24px;
+      border-left: 5px solid var(--teal-bright);
+      padding-left: 24px;
+    }
+
+    .hero-buttons { display: flex; gap: 18px; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      padding: 12px 30px;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--teal-dark);
+      border: 1px solid var(--teal-light);
+      transition: all 0.2s;
+      box-shadow: 0 2px 8px rgba(42,122,114,0.10);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--teal-dark);
+      color: white;
+      border: none;
+      box-shadow: 0 8px 18px rgba(42,122,114,0.22);
+    }
+
+    .btn-primary i { color: var(--teal-light); }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: var(--bg-tint);
+      border-color: var(--teal-mid);
+    }
+
+    .btn-primary:hover { background: #1f5e57; }
+
+    .hero-image { flex: 0 0 140px; text-align: center; }
+    .hero-image i { font-size: 9rem; color: var(--teal-mid); opacity: 0.7; }
+
+    /* === EDITORIAL ROW === */
+    .editorial-row {
+      background: var(--bg-tint);
+      padding: 26px 0;
+      border-bottom: 2px solid var(--teal-light);
+    }
+
+    .values-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      font-weight: 500;
+    }
+
+    .value-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      padding: 8px 22px;
+      border-radius: 40px;
+      box-shadow: 0 2px 10px rgba(42,122,114,0.07);
+    }
+
+    .value-item i { color: var(--teal-mid); font-size: 1.3rem; }
+
+    /* === SECTIONS === */
+    .section { padding: 56px 0; }
+    .section-light { background: #ffffff; }
+    .section-muted { background: var(--bg-tint); }
+
+    .section h3 {
+      font-size: 2.2rem;
+      font-weight: 650;
+      color: var(--teal-dark);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section h3 i { color: var(--teal-bright); font-size: 2rem; }
+
+    .section-subhead {
+      font-size: 1.2rem;
+      color: var(--teal-mid);
+      margin-bottom: 36px;
+      max-width: 800px;
+    }
+
+    /* === CONDITIONS === */
+    .conditions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .condition-btn {
+      background: white;
+      border: 2px solid var(--teal-light);
+      border-radius: 40px;
+      padding: 16px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      color: var(--teal-dark);
+      transition: 0.2s;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+      width: 100%;
+      font-size: 1rem;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .condition-btn i { font-size: 2.2rem; color: var(--teal-mid); }
+
+    .condition-btn:hover {
+      background: var(--teal-dark);
+      color: white;
+      border-color: var(--teal-dark);
+      transform: scale(1.02);
+    }
+
+    .condition-btn:hover i { color: white; }
+
+    .condition-btn.active {
+      background: var(--teal-dark);
+      color: white;
+      border-color: var(--teal-dark);
+    }
+
+    .condition-btn.active i { color: var(--teal-light); }
+
+    /* === DEFINITION CARD === */
+    .definition-card {
+      background: var(--bg-soft);
+      border-left: 10px solid var(--teal-mid);
+      padding: 32px 36px;
+      border-radius: 40px;
+      margin: 24px 0 32px;
+      box-shadow: 0 12px 24px -8px rgba(42,122,114,0.15);
+    }
+
+    .definition-card h4 { font-size: 2rem; color: var(--teal-dark); margin-bottom: 16px; }
+    .definition-card p  { font-size: 1.2rem; color: #1a3330; }
+
+    /* === CARDS === */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 28px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 26px 20px;
+      box-shadow: 0 12px 28px -8px rgba(42,122,114,0.12);
+      border: 1px solid var(--bg-soft);
+      transition: 0.15s;
+    }
+
+    .card:hover { transform: translateY(-6px); }
+    .card i { font-size: 2.2rem; color: var(--teal-mid); margin-bottom: 18px; }
+    .card h4 { font-size: 1.5rem; margin-bottom: 12px; color: var(--teal-dark); }
+
+    .exec-badge {
+      display: inline-block;
+      background: var(--bg-soft);
+      border-radius: 40px;
+      padding: 6px 18px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 16px;
+      color: var(--teal-dark);
+    }
+
+    /* === EVENTS === */
+    .event-list { background: white; border-radius: 32px; padding: 24px; }
+
+    .event-item {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 18px 0;
+      border-bottom: 1px dashed var(--teal-light);
+    }
+
+    .event-date {
+      background: var(--teal-dark);
+      color: white;
+      min-width: 90px;
+      text-align: center;
+      padding: 10px 8px;
+      border-radius: 30px;
+      font-weight: 700;
+    }
+
+    .event-desc { font-weight: 500; flex: 1; }
+
+    .btn-small {
+      background: none;
+      border: 2px solid var(--teal-dark);
+      border-radius: 40px;
+      padding: 8px 20px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Quicksand', sans-serif;
+      color: var(--teal-dark);
+    }
+
+    .btn-small:hover { background: var(--teal-dark); color: white; }
+
+    /* === CONTACT === */
+    #contact { background: var(--bg-soft); }
+    #contact i { color: var(--teal-dark) !important; }
+
+    /* === FOOTER === */
+    .footer {
+      background: var(--teal-dark);
+      color: white;
+      padding: 40px 0 24px;
+    }
+
+    .footer .social-links a { color: white; font-size: 1.8rem; margin: 0 16px; transition: 0.2s; }
+    .footer .social-links a:hover { color: var(--teal-light); }
+
+    @media (max-width: 700px) {
+      .hero-grid { flex-direction: column; text-align: center; }
+      .hero-text .student-tagline { border-left: none; padding-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="topbar">
+  <div class="container topbar-inner">
+    <div class="logo">
+      <!-- Logo image (woman silhouette symbol) -->
+      <img src="logo.png" alt="Derma-T logo" class="logo-img">
+      <!-- Cursive brand name -->
+      <span class="logo-name">Derma‑T</span>
+    </div>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#conditions">Conditions</a>
+      <a href="#programs">Programs</a>
+      <a href="#calendar">Calendar</a>
+      <a href="#team">Team</a>
+      <a class="btn-nav" href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero-student">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <span class="hero-badge"><i class="fas fa-graduation-cap"></i> STUDENT‑LED INITIATIVE</span>
+      <h2>Dermatology resource centre</h2>
+      <div class="student-tagline">
+        <i class="fas fa-stethoscope"></i> For students · by students · evidence‑based skin health
+      </div>
+      <div class="hero-buttons">
+        <a href="#conditions" class="btn btn-primary"><i class="fas fa-search"></i> Explore conditions</a>
+        <a href="#calendar" class="btn"><i class="fas fa-calendar-alt"></i> Upcoming events</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <i class="fas fa-clinic-medical"></i>
+    </div>
+  </div>
+</section>
+
+<!-- EDITORIAL VALUES ROW -->
+<section class="editorial-row">
+  <div class="container">
+    <div class="values-grid">
+      <span class="value-item"><i class="fas fa-check-circle"></i> Accessible</span>
+      <span class="value-item"><i class="fas fa-lock-open"></i> Independent</span>
+      <span class="value-item"><i class="fas fa-file-invoice"></i> Free</span>
+      <span class="value-item"><i class="fas fa-star"></i> Authoritative</span>
+      <span class="value-item"><i class="fas fa-stethoscope"></i> Reviewed by dermatologists</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section section-light">
+  <div class="container">
+    <h3><i class="fas fa-pagelines"></i> Our purpose</h3>
+    <p class="section-subhead">Derma‑T is a student‑led nonprofit advancing skin health education, hygiene, and dermatology awareness — on campus and beyond Kingston.</p>
+    <div class="cards-grid" style="grid-template-columns: repeat(3,1fr);">
+      <div class="card"><i class="fas fa-chalkboard-teacher"></i><h4>Education</h4><p>Evidence‑based workshops & guest speakers (dermatologists, med students).</p></div>
+      <div class="card"><i class="fas fa-hands-helping"></i><h4>Outreach</h4><p>Hygiene kits, skin health campaigns, community partnerships.</p></div>
+      <div class="card"><i class="fas fa-bullhorn"></i><h4>Awareness</h4><p>Debunk myths, promote sun protection & inclusive skin health.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONDITIONS EXPLORER -->
+<section id="conditions" class="section section-muted">
+  <div class="container">
+    <h3><i class="fas fa-disease"></i> Skin conditions explorer</h3>
+    <p class="section-subhead">Click any button to view a short, evidence‑based explanation (educational use only).</p>
+    <div class="conditions-grid" id="conditionButtons">
+      <button class="condition-btn" data-condition="acne"><i class="fas fa-circle"></i> Acne</button>
+      <button class="condition-btn" data-condition="rashes"><i class="fas fa-wind"></i> Rashes</button>
+      <button class="condition-btn" data-condition="eczema"><i class="fas fa-allergies"></i> Eczema</button>
+      <button class="condition-btn" data-condition="psoriasis"><i class="fas fa-dna"></i> Psoriasis</button>
+      <button class="condition-btn" data-condition="rosacea"><i class="fas fa-face-frown"></i> Rosacea</button>
+      <button class="condition-btn" data-condition="fungal"><i class="fas fa-seedling"></i> Fungal</button>
+      <button class="condition-btn" data-condition="hives"><i class="fas fa-bolt"></i> Hives</button>
+    </div>
+    <div class="definition-card" id="definitionDisplay">
+      <h4 id="defTitle">Acne</h4>
+      <p id="defText">Acne is a common skin condition caused by clogged pores, excess oil, bacteria, and inflammation. It often appears on the face, chest, and back.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs" class="section section-light">
+  <div class="container">
+    <h3><i class="fas fa-laptop-house"></i> Programs & activities</h3>
+    <div class="cards-grid">
+      <div class="card"><i class="fas fa-microphone-alt"></i><h4>Guest speaker series</h4><p>Dermatologists & healthcare pros discuss patient care & wellness.</p></div>
+      <div class="card"><i class="fas fa-hands-bubbles"></i><h4>Hygiene kit assembly</h4><p>Community outreach: distribute kits & educational material.</p></div>
+      <div class="card"><i class="fas fa-calendar-week"></i><h4>Weekly myth‑busting</h4><p>Social media posts on common skin myths vs. facts.</p></div>
+      <div class="card"><i class="fas fa-hand-holding-usd"></i><h4>Fundraising campaigns</h4><p>Support local skin health initiatives.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDAR -->
+<section id="calendar" class="section section-muted">
+  <div class="container">
+    <h3><i class="fas fa-calendar-check"></i> January goals & events</h3>
+    <div class="event-list">
+      <div class="event-item">
+        <div class="event-date">JAN 25</div>
+        <div class="event-desc"><strong>Get‑to‑know‑you Exec night</strong> – Karaoke, snacks, and role overview (room TBA).</div>
+        <button class="btn-small" onclick="alert('📅 Reminder set (demo)')"><i class="far fa-bell"></i> remind me</button>
+      </div>
+      <div class="event-item">
+        <div class="event-date">JAN 15-20</div>
+        <div class="event-desc"><strong>Cold email sponsors / build team</strong> – outreach to dermatology clinics.</div>
+        <button class="btn-small" onclick="alert('📋 template request (interactive)')"><i class="fas fa-envelope-open-text"></i> get template</button>
+      </div>
+      <div class="event-item">
+        <div class="event-date">WEEKLY</div>
+        <div class="event-desc"><strong>Instagram posts</strong> – #projectdermat: acne, eczema, sun protection.</div>
+        <button class="btn-small" onclick="window.open('https://instagram.com/projectdermat','_blank')"><i class="fab fa-instagram"></i> follow</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team" class="section section-light">
+  <div class="container">
+    <h3><i class="fas fa-users"></i> Executive team</h3>
+    <div class="cards-grid">
+      <div class="card"><i class="fas fa-crown"></i><h4>Co‑founders</h4><p>Sarah · Rojan</p><span class="exec-badge">vision & leadership</span></div>
+      <div class="card"><i class="fas fa-handshake"></i><h4>Outreach Coordinators</h4><p>Ashley · Hasti</p><span class="exec-badge">community & partnerships</span></div>
+      <div class="card"><i class="fas fa-calendar-alt"></i><h4>Event Coordinators</h4><p>Rayyan · Kiana</p><span class="exec-badge">workshops + logistics</span></div>
+      <div class="card"><i class="fas fa-pen-fancy"></i><h4>Content Managers</h4><p>Prisha · Benjamin</p><span class="exec-badge">resources & social content</span></div>
+      <div class="card"><i class="fas fa-calculator"></i><h4>Finance Manager</h4><p>Chloe</p><span class="exec-badge">budget & funding</span></div>
+      <div class="card"><i class="fas fa-globe"></i><h4>Web Managers</h4><p>Ennoj · Kyan</p><span class="exec-badge">platform & accessibility</span></div>
+      <div class="card"><i class="fas fa-heart"></i><h4>Head of D&I</h4><p>Salma</p><span class="exec-badge">inclusive skin health</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="container">
+    <h3><i class="fas fa-address-card"></i> Connect with us</h3>
+    <div style="display: flex; gap: 40px; flex-wrap: wrap; align-items: center;">
+      <div><i class="fas fa-envelope fa-2x"></i> <strong>projectdermat@gmail.com</strong></div>
+      <div><i class="fab fa-instagram fa-2x"></i> <strong>@projectdermat</strong></div>
+      <div><i class="fab fa-linkedin fa-2x"></i> <strong>/company/derma-t</strong></div>
+    </div>
+    <p style="margin-top: 28px;">📍 Queen's University, Kingston · 2026 launch</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container" style="text-align: center;">
+    <div class="social-links">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+    <p style="margin-top: 24px; opacity: 0.8;">© 2026 Derma‑T · Student‑led dermatology initiative. Content for educational use.</p>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    const defTitle = document.getElementById('defTitle');
+    const defText  = document.getElementById('defText');
+    const buttons  = document.querySelectorAll('.condition-btn');
+
+    const conditionData = {
+      acne:      { title: 'Acne',               text: 'Acne is a common skin condition caused by clogged pores, excess oil, bacteria, and inflammation. It often appears on the face, chest, and back.' },
+      rashes:    { title: 'Rashes',             text: 'Rashes are changes in skin color or texture caused by irritation, infection, allergies, or underlying conditions.' },
+      eczema:    { title: 'Eczema (dermatitis)', text: 'Eczema is a chronic inflammatory condition that causes dry, itchy, and irritated skin. It often flares due to triggers like stress or allergens.' },
+      psoriasis: { title: 'Psoriasis',          text: 'Psoriasis is an autoimmune condition that leads to rapid skin cell buildup, resulting in thick, scaly patches.' },
+      rosacea:   { title: 'Rosacea',            text: 'Rosacea causes facial redness, flushing, and sometimes bumps, often triggered by heat, stress, or certain foods.' },
+      fungal:    { title: 'Fungal infections',  text: 'Fungal infections occur when fungi grow on the skin, commonly affecting warm, moist areas such as feet or groin.' },
+      hives:     { title: 'Hives',              text: 'Hives are raised, itchy welts caused by allergic reactions, stress, or infections. They often appear suddenly and fade within hours.' }
+    };
+
+    function setActive(cond) {
+      buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.condition === cond));
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const cond = this.dataset.condition;
+        if (cond && conditionData[cond]) {
+          defTitle.innerText = conditionData[cond].title;
+          defText.innerText  = conditionData[cond].text;
+          setActive(cond);
+        }
+      });
+    });
+
+    setActive('acne');
+  })();
+</script>
+
+</body>
+</html>
