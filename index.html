@@ -1,253 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Derma-T</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Derma-T Project</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f7fbfb;
-      color: #174646;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 30px;
-    }
-
-    /* NAVBAR */
-    .topbar {
-      background: white;
-      padding: 18px 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .topbar-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo span {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      color: #008b8b;
-      font-weight: 700;
-    }
-
-    .nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #174646;
-      font-weight: 500;
-    }
-
-    /* HERO */
-    .hero {
-      background: linear-gradient(135deg, #ffffff, #e3f5f4);
-      padding: 80px 0;
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 60px;
-      color: #008b8b;
-    }
-
-    .hero p {
-      margin-top: 20px;
-      line-height: 1.7;
-      color: #2d5d5d;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      background: #008b8b;
-      color: white;
-      padding: 14px 26px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    /* SECTION */
-    .section {
-      padding: 60px 0;
-    }
-
-    .section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 38px;
-      color: #008b8b;
-      margin-bottom: 15px;
-    }
-
-    .section p {
-      max-width: 700px;
-      line-height: 1.7;
-    }
-
-    /* CARDS */
-    .cards {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
-
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 18px;
-      width: 250px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      border-top: 5px solid #008b8b;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      color: #008b8b;
-    }
-
-    /* CONDITIONS */
-    .conditions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .condition-btn {
-      background: white;
-      border: 2px solid #75aaa6;
-      padding: 10px 18px;
-      border-radius: 25px;
-      cursor: pointer;
-    }
-
-    .condition-btn:hover {
-      background: #008b8b;
-      color: white;
-    }
-
-    .definition {
-      margin-top: 20px;
-      background: #e3f5f4;
-      padding: 20px;
-      border-radius: 15px;
-    }
-
-    /* CONTACT */
-    .contact {
-      background: #008b8b;
-      color: white;
-      padding: 50px 0;
-      text-align: center;
-    }
-
-    /* FOOTER */
-    .footer {
-      background: #174646;
-      color: white;
-      text-align: center;
-      padding: 15px;
-    }
-
-  </style>
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
 
-<header class="topbar">
-  <div class="container topbar-inner">
-    <div class="logo"><span>Derma-T</span></div>
-    <nav class="nav">
-      <a href="#about">About</a>
-      <a href="#conditions">Conditions</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+  <!-- Header -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#home" class="logo">
+        <i class="fa-solid fa-leaf"></i>
+        <span>DERMA-T</span>
+      </a>
 
-<section class="hero">
-  <div class="container">
-    <h1>Project DERMA-T</h1>
-    <p>
-      Student-led nonprofit focused on skin health, hygiene, and dermatology education.
-      Connecting students with healthcare professionals and community outreach.
-    </p>
-    <a href="#contact" class="btn">Applications Coming Soon</a>
-  </div>
-</section>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#mission">Mission</a>
+        <a href="#programs">Programs</a>
+        <a href="#team">Team</a>
+        <a href="#contact" class="btn-nav">Join Us</a>
+      </nav>
+    </div>
+  </header>
 
-<section id="about" class="section">
-  <div class="container">
-    <h2>Our Mission</h2>
-    <p>
-      We aim to educate communities about dermatology, promote hygiene awareness,
-      and create opportunities for students to engage with healthcare professionals.
-    </p>
-
-    <div class="cards">
-      <div class="card">
-        <h3>Education</h3>
-        <p>Workshops and dermatology awareness.</p>
+  <!-- Hero -->
+  <section id="home" class="hero-student">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <div class="hero-badge">Student-Led Nonprofit Project</div>
+        <h1>Skin health education made simple, inclusive, and accessible.</h1>
+        <p class="student-tagline">
+          Derma-T promotes dermatology education, hygiene awareness, and community impact through student-led initiatives.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Applications Coming Soon</a>
+          <a href="#about" class="btn"><i class="fa-solid fa-circle-info"></i> Learn More</a>
+        </div>
       </div>
-      <div class="card">
-        <h3>Outreach</h3>
-        <p>Community campaigns and hygiene kits.</p>
-      </div>
-      <div class="card">
-        <h3>Connection</h3>
-        <p>Networking with healthcare professionals.</p>
+
+      <div class="hero-card">
+        <div class="circle circle-one"></div>
+        <div class="circle circle-two"></div>
+        <i class="fa-solid fa-hand-holding-medical hero-icon"></i>
+        <h2>DERMA-T</h2>
+        <p>Education • Hygiene • Awareness</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="conditions" class="section" style="background:#f4f7f7;">
-  <div class="container">
-    <h2>Skin Conditions</h2>
-
-    <div class="conditions">
-      <button class="condition-btn" onclick="show('Acne','Clogged pores and oil buildup.')">Acne</button>
-      <button class="condition-btn" onclick="show('Eczema','Dry itchy inflamed skin.')">Eczema</button>
-      <button class="condition-btn" onclick="show('Psoriasis','Autoimmune skin scaling condition.')">Psoriasis</button>
+  <!-- Values Row -->
+  <section class="editorial-row">
+    <div class="container values-grid">
+      <div class="value-item"><i class="fa-solid fa-graduation-cap"></i> Student Education</div>
+      <div class="value-item"><i class="fa-solid fa-user-doctor"></i> Healthcare Connections</div>
+      <div class="value-item"><i class="fa-solid fa-hands-helping"></i> Community Outreach</div>
+      <div class="value-item"><i class="fa-solid fa-heart"></i> Hygiene Awareness</div>
     </div>
+  </section>
 
-    <div class="definition" id="definition">
-      Click a condition to learn more.
+  <!-- About -->
+  <section id="about" class="section section-light">
+    <div class="container two-column">
+      <div>
+        <h3><i class="fa-solid fa-sparkles"></i> About Derma-T</h3>
+        <p class="section-subhead">
+          Derma-T is a student-led nonprofit project dedicated to promoting education around skin health, hygiene, and awareness.
+        </p>
+        <p>
+          Our goal is to help students learn more about dermatology, connect with healthcare professionals, and create meaningful community initiatives through education, service, and fundraising.
+        </p>
+      </div>
+      <div class="soft-panel">
+        <h4>What We Focus On</h4>
+        <ul>
+          <li>Skin health education</li>
+          <li>Hygiene kit initiatives</li>
+          <li>Dermatology awareness campaigns</li>
+          <li>Student and healthcare professional engagement</li>
+        </ul>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact" class="contact">
-  <h2>Contact Us</h2>
-  <p>projectdermat@gmail.com</p>
-</section>
+  <!-- Mission -->
+  <section id="mission" class="section section-muted">
+    <div class="container">
+      <h3><i class="fa-solid fa-bullseye"></i> Our Mission</h3>
+      <div class="definition-card">
+        <h4>Making dermatology education more approachable.</h4>
+        <p>
+          We aim to provide students with insight into dermatology while also creating opportunities to positively impact the community through educational, service, and financial initiatives.
+        </p>
+      </div>
+    </div>
+  </section>
 
-<footer class="footer">
-  © 2026 Derma-T
-</footer>
+  <!-- Programs -->
+  <section id="programs" class="section section-light">
+    <div class="container">
+      <h3><i class="fa-solid fa-seedling"></i> What We Do</h3>
+      <p class="section-subhead">Our projects are designed to be educational, practical, and community-focused.</p>
 
-<script>
-function show(title, text) {
-  document.getElementById("definition").innerHTML =
-    "<strong>" + title + "</strong><br>" + text;
-}
-</script>
+      <div class="cards-grid">
+        <div class="card">
+          <i class="fa-solid fa-book-open-reader"></i>
+          <h4>Educational Posts</h4>
+          <p>Creating simple and engaging skin health information for students and the wider community.</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-kit-medical"></i>
+          <h4>Hygiene Kits</h4>
+          <p>Supporting outreach through hygiene-focused care packages and community service initiatives.</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-comments"></i>
+          <h4>Professional Talks</h4>
+          <p>Helping students connect with healthcare professionals and learn about dermatology pathways.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Team -->
+  <section id="team" class="section section-muted">
+    <div class="container">
+      <h3><i class="fa-solid fa-users"></i> Led by Queen’s University Students</h3>
+      <p class="section-subhead">
+        We are currently looking for members who are passionate about healthcare, education, and community outreach.
+      </p>
+      <div class="cards-grid">
+        <div class="card mini-card">
+          <h4>Join the Project</h4>
+          <p>Applications coming soon for students interested in contributing to Derma-T.</p>
+          <span class="exec-badge">Applications Coming Soon</span>
+        </div>
+        <div class="card mini-card">
+          <h4>Get Involved</h4>
+          <p>Support educational campaigns, outreach events, and future dermatology initiatives.</p>
+          <span class="exec-badge">Student-Led</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section contact-section">
+    <div class="container contact-box">
+      <h3>Ready to get involved?</h3>
+      <p>Contact us for updates, collaborations, or future member opportunities.</p>
+      <a href="mailto:Projectdermat@gmail.com" class="btn btn-primary"><i class="fa-solid fa-envelope"></i> Projectdermat@gmail.com</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© 2026 Derma-T Project. Student-led dermatology education and awareness.</p>
+      <div class="social-links">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="mailto:Projectdermat@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
